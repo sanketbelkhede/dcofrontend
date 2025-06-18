@@ -1,0 +1,7 @@
+.heading {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #df6a6a;
+}
