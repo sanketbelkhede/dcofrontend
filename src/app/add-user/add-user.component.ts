@@ -31,9 +31,9 @@ export class AddUserComponent implements OnInit{
   constructor(private formBuilder: UntypedFormBuilder, private restService: RestService, private messageService: MessageService) {}
   ngOnInit(): void {
     this.userForm = this.formBuilder.group({
-      userEmail: ['', [Validators.required, Validators.email]],
-      userPhone: ['', [Validators.required, Validators.pattern("[0-9]{10}")]],
-      userPanCard: ['', [Validators.required, Validators.pattern("[A-Z]{5}[0-9]{4}[A-Z]{1}")]]
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.pattern("[0-9]{10}")]],
+      panCard: ['', [Validators.required, Validators.pattern("[A-Z]{5}[0-9]{4}[A-Z]{1}")]]
     });
   }
 

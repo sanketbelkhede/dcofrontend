@@ -2,29 +2,29 @@
   <h1>Customer Basic Verification</h1>
   <form [formGroup]="userForm" (ngSubmit)="submit()">
     <div>
-      <label for="userPhone">Mobile Number:</label>
-      <div class="error" *ngIf="userForm.get('userPhone')?.touched && userForm.get('userPhone')?.invalid">
-        <small *ngIf="userForm.get('userPhone')?.errors?.['required']">Mobile Number is required.</small>
-        <small *ngIf="userForm.get('userPhone')?.errors?.['pattern']">Mobile Number is invalid.</small>
+      <label for="phone">Mobile Number:</label>
+      <div class="error" *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
+        <small *ngIf="userForm.get('phone')?.errors?.['required']">Mobile Number is required.</small>
+        <small *ngIf="userForm.get('phone')?.errors?.['pattern']">Mobile Number is invalid.</small>
       </div>
-      <input type="tel" id="userPhone" formControlName="userPhone"  maxlength="10" pattern="[0-9]*" inputmode="numeric">
+      <input type="tel" id="phone" formControlName="phone"  maxlength="10" pattern="[0-9]*" inputmode="numeric">
     </div>
     <div>
-      <label for="userEmail">Email:</label>
-      <div class="error" *ngIf="userForm.get('userEmail')?.touched && userForm.get('userEmail')?.invalid">
-        <small *ngIf="userForm.get('userEmail')?.errors?.['required']">Email is required.</small>
-        <small *ngIf="userForm.get('userEmail')?.errors?.['email']">Enter a valid email.</small>
+      <label for="email">Email:</label>
+      <div class="error" *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+        <small *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</small>
+        <small *ngIf="userForm.get('email')?.errors?.['email']">Enter a valid email.</small>
       </div>
-      <input type="email" id="userEmail" formControlName="userEmail">
+      <input type="email" id="email" formControlName="email">
     </div>
 
     <div>
-      <label for="userPanCard">Pan Number:</label>
-      <mat-error class="error" *ngIf="userForm.get('userPanCard')?.touched && userForm.get('userPanCard')?.invalid">
-        <small *ngIf="userForm.get('userPanCard')?.errors?.['required']">PAN is required.</small>
-        <small *ngIf="userForm.get('userPanCard')?.errors?.['pattern']">Invalid PAN format (ABCDE1234F).</small>
+      <label for="panCard">Pan Number:</label>
+      <mat-error class="error" *ngIf="userForm.get('panCard')?.touched && userForm.get('panCard')?.invalid">
+        <small *ngIf="userForm.get('panCard')?.errors?.['required']">PAN is required.</small>
+        <small *ngIf="userForm.get('panCard')?.errors?.['pattern']">Invalid PAN format (ABCDE1234F).</small>
       </mat-error>
-      <input type="text" id="userPanCard" formControlName="userPanCard">
+      <input type="text" id="panCard" formControlName="panCard">
     </div>
 
     <button type="submit" [disabled]="!userForm.valid">Verify</button>
