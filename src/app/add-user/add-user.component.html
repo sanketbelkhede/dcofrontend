@@ -1,37 +1,23 @@
 <div class="container">
   <h1>Customer Basic Verification</h1>
-  <form [formGroup]="userForm" (ngSubmit)="submit()">
+  <form>
     <div>
-      <label for="userPhone">Mobile Number:</label>
-      <div class="error" *ngIf="userForm.get('userPhone')?.touched && userForm.get('userPhone')?.invalid">
-        <small *ngIf="userForm.get('userPhone')?.errors?.['required']">Mobile Number is required.</small>
-        <small *ngIf="userForm.get('userPhone')?.errors?.['pattern']">Mobile Number is invalid.</small>
-      </div>
-      <input type="tel" id="userPhone" formControlName="userPhone"  maxlength="10" pattern="[0-9]*" inputmode="numeric">
+      <label for="mobileNumber">Mobile Number:</label>
+      <input type="tel" id="mobileNumber" name="mobileNumber" pattern="[0-9]{10}" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
     </div>
 
     <div>
-      <label for="userEmail">Email:</label>
-      <div class="error" *ngIf="userForm.get('userEmail')?.touched && userForm.get('userEmail')?.invalid">
-        <small *ngIf="userForm.get('userEmail')?.errors?.['required']">Email is required.</small>
-        <small *ngIf="userForm.get('userEmail')?.errors?.['email']">Enter a valid email.</small>
-      </div>
-      <input type="email" id="userEmail" formControlName="userEmail">
+      <label for="panNumber">Pan Number:</label>
+      <input type="text" id="panNumber" name="panNumber" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
     </div>
 
-    <div>
-      <label for="userPanCard">Pan Number:</label>
-      <mat-error class="error" *ngIf="userForm.get('userPanCard')?.touched && userForm.get('userPanCard')?.invalid">
-        <small *ngIf="userForm.get('userPanCard')?.errors?.['required']">PAN is required.</small>
-        <small *ngIf="userForm.get('userPanCard')?.errors?.['pattern']">Invalid PAN format (ABCDE1234F).</small>
-      </mat-error>
-      <input type="text" id="userPanCard" formControlName="userPanCard">
-    </div>
-
-    <button type="submit" [disabled]="!userForm.valid">Verify</button>
-    <button type="reset" (click)="reset()">Reset</button>
+    <button type="submit">Verify</button>
+    <button type="reset">Reset</button>
   </form>
-
 
   <ng-container>
     <div *ngFor="let country of countries">
