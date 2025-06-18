@@ -20,4 +20,8 @@ export class RestService {
   getStates() {
     return this.http.get(this.apiUrl + 'api/states?countryId=' + 2);
   }
+
+  verifyUser(userData: any) {
+    return this.http.post(this.apiUrl + 'api/customer/verify-user', userData);
+  }
 }
