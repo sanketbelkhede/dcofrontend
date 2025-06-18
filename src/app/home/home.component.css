@@ -1,45 +1,7 @@
-.heading-box {
+.heading {
   display: flex;
   align-content: center;
   justify-content: center;
   text-align: center;
-  margin: 100px;
-}
-
-.heading {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: bold;
-  font-size: 50px;
-  color: blueviolet;
-}
-
-.box {
-  display: flex;
-  justify-content: center;
-}
-
-.start-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 20px;
-  width: 980px;
-}
-
-.image {
-  box-shadow: 0px 0px 20px 0px;
-}
-
-.btn {
-  background-color: #a4cef1;
-  border: 1px #bcbcbc solid;
-  border-radius: 25px;
-  color: white;
-  position: relative;
-  top: -34%;
-  left: 63%;
-  width: 15%;
-  font-size: x-large;
-  opacity: 0;
-  cursor: pointer;
+  background-color: #df6a6a;
 }
